@@ -1,10 +1,20 @@
+#include <chrono>
+#include <thread>
+
+#include "jarvis.h"
 
 
-/**
- * @file main.cpp
- * @brief Main file for the project.
- * @date 2021-08-31
- * @author Harian Elyoth
- *
- */
-int main() { return 0; }
+int main() { 
+    Jarvis *my_jarvis = new Jarvis();
+    while (true) {
+        try {
+            my_jarvis->ListenAndRespond();
+            std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+        }
+        catch(...){
+            break;
+        }
+    }
+    delete my_jarvis;
+    return 0; 
+}
