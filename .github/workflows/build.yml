@@ -1,0 +1,51 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - "**"
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Install CMake
+      run: sudo apt-get install cmake
+
+    - name: Build
+      run: cmake -S . -B build && cmake --build build
+
+  
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Install Doxygen
+      run: sudo apt-get install doxygen
+
+    - name: Generate Documentation
+      run: doxygen docs/Doxyfile
+
+  format:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+  
+    - name: Install Clang Format
+      run: sudo apt-get install -y clang-format
+  
+    - name: Format code
+      run: find . -name '*.cpp' -or -name '*.h' | xargs clang-format -i
+  
+    - name: Commit changes
+      run: |
+        git config --global user.name 'GitHub Actions'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        git add -u
+        git commit --amend --no-edit || echo "No changes to commit"
+        git push -f
