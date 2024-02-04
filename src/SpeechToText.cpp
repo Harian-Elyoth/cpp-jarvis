@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
-#include "audio.h"
-#include "speech_to_text.h"
+#include "AudioMessage.h"
+#include "SpeechToText.h"
 
 
 std::string SpeechToText::to_text(AudioMessage* message) {

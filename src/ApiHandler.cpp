@@ -1,17 +1,20 @@
 #include <iostream>
 #include <string>
 
-#include "api.h"
+#include "ApiHandler.h"
 
-Api::Api(std::string url) {
+ApiHandler::ApiHandler() {
+}
+
+ApiHandler::ApiHandler(std::string url) {
     this->url = url;
 }
 
-Api::~Api() {
+ApiHandler::~ApiHandler() {
 }
 
 
-std::string Api::call(std::string message) {
+std::string ApiHandler::call(std::string message) {
     std::cout << "Calling api with message: " << message << std::endl;
     return "This is the answer from chatgpt";
 };

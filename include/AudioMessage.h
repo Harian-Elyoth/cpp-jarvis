@@ -1,5 +1,5 @@
-#ifndef AUDIO_H
-#define AUDIO_H
+#ifndef _INCLUDE_AUDIOMESSAGE_H_
+#define _INCLUDE_AUDIOMESSAGE_H_
 #include <iostream>
 #include <vector>
 

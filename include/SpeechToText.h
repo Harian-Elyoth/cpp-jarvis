@@ -1,8 +1,8 @@
-#ifndef SPEECHTOTEXT_H
-#define SPEECHTOTEXT_H
+#ifndef _INCLUDE_SPEECHTOTEXT_H_
+#define _INCLUDE_SPEECHTOTEXT_H_
 #include <iostream>
 #include <string>
-#include "audio.h"
+#include "AudioMessage.h"
 
 
 class SpeechToText {

@@ -2,8 +2,8 @@
 #include <string>
 #include <array>
 
-#include "audio.h"
-#include "text_to_speech.h"
+#include "AudioMessage.h"
+#include "TextToSpeech.h"
 
 AudioMessage* TextToSpeech::to_audio(std::string message) {
     std::cout << "Processing text to speech... Message: " << message << std::endl;

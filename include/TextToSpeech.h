@@ -1,8 +1,8 @@
-#ifndef TEXTTOSPEECH_H
-#define TEXTTOSPEECH_H
+#ifndef _INCLUDE_TEXTTOSPEECH_H_
+#define _INCLUDE_TEXTTOSPEECH_H_
 #include <iostream>
 #include <string>
-#include "audio.h"
+#include "AudioMessage.h"
 
 
 class TextToSpeech {

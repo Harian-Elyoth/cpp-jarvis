@@ -1,16 +1,17 @@
-#ifndef API_H
-#define API_H
+#ifndef _INCLUDE_APIHANDER_H_
+#define _INCLUDE_APIHANDER_H_
 // some declarations in
 // the header file.
 #include <iostream>
 #include <string>
 
 
-class Api {
+class ApiHandler {
     std::string url;
 public:
-    Api(std::string url);
-    ~Api();
+    ApiHandler();
+    ApiHandler(std::string url);
+    ~ApiHandler();
     std::string call(std::string message);
 };
 
