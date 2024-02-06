@@ -14,7 +14,11 @@ set(CMAKE_CXX_STANDARD 17)
 file(GLOB SOURCE "src/*.cpp")
 
 # Add an executable target called "jarvis" to be built from the source files
+find_package(CURL REQUIRED)
 add_executable(jarvis ${SOURCE})
+
+include_directories(${CURL_INCLUDE_DIRS})
+target_link_libraries(jarvis ${CURL_LIBRARIES})
 
 # Add the include directory to the jarvis target's include directories
 target_include_directories(jarvis PUBLIC include)
